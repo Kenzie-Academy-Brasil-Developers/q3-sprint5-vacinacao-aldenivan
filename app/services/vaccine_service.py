@@ -25,7 +25,6 @@ def validation_keys(**data):
     for key in data:
 
         if key == "cpf" or key == "name" or key == "vaccine_name" or key == "health_unit_name":
-            vaccine_dict[key] = data[key]
-
+            vaccine_dict[key] = data[key].upper()
 
     return vaccine_dict
