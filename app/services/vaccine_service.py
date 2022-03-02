@@ -20,11 +20,21 @@ def validation_types(dict):
 
 def validation_keys(**data):
 
-    vaccine_dict = {}
+    wrong_keys = []
 
     for key in data:
 
-        if key == "cpf" or key == "name" or key == "vaccine_name" or key == "health_unit_name":
-            vaccine_dict[key] = data[key].upper()
+        if key != "cpf" and key != "name" and key != "vaccine_name" and key != "health_unit_name":
+            wrong_keys.append(key)
+        print(key)
 
-    return vaccine_dict
+    return wrong_keys
+
+
+def tranforming_upper_case(data):
+
+    for value in data.values():
+        
+        if value is str:
+            value.upper()
+    
